@@ -1,10 +1,10 @@
 {
   "name": "workspace",
   "version": "1.0.0",
-  "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,22 @@
     "react-dom": "^16.3.2"
   },
   "devDependencies": {
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.3.0",
+    "typescript": "^2.8.3",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omriwa/ssr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/omriwa/ssr/issues"
+  },
+  "homepage": "https://github.com/omriwa/ssr#readme",
+  "description": ""
 }
