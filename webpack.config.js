@@ -1,13 +1,15 @@
 const path = require('path');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: {
-        style: './src/style/style.scss'
+        style: './src/style/style.scss',
+        react: './src/js/index.js'
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, '/dist'),
+        path: path.resolve(__dirname, 'dist'),
         publicPath: '/'
     },
     module: {
@@ -38,5 +40,8 @@ module.exports = {
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
-  plugins: [new HtmlWebPackPlugin()]
+  plugins: [
+      new HtmlWebPackPlugin(),
+      new CleanWebpackPlugin(['dist'])
+    ]
 }
