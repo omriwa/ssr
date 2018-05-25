@@ -15,8 +15,7 @@ server.use(webpackDevMiddleware(compiler,{
 server.use(express.static(path.join(__dirname,'dist')));
 
 server.get('/',function(req,res){
-    // res.render('dist/index.html');
-    res.send('ssss');
+    res.render('index.html');
 });
 
 server.listen(process.env.PORT,function(){

@@ -7,7 +7,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, '/dist'),
         publicPath: '/'
     },
     module: {
@@ -24,6 +24,13 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader"
+                }
             }
         ]
         
@@ -31,8 +38,5 @@ module.exports = {
   resolve: {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
-  plugins: [new HtmlWebPackPlugin({
-      template: "./dist/index.html",
-      filename: "./index.html"
-  })]
+  plugins: [new HtmlWebPackPlugin()]
 }
