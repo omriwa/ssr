@@ -33,6 +33,11 @@ module.exports = {
                 use: {
                     loader: "babel-loader"
                 }
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: "babel-loader"
             }
         ]
         
@@ -41,7 +46,9 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ]
   },
   plugins: [
-      new HtmlWebPackPlugin(),
+      new HtmlWebPackPlugin({
+          title: 'Sabrez Website'
+      }),
       new CleanWebpackPlugin(['dist'])
     ]
 }

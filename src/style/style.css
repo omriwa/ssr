@@ -1,4 +1,18 @@
+/*
+TABLE OF CONTENT
+HEADER
+BODY
+FOOTER
+*/
 body {
   background-color: cornsilk; }
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,12 +1,14 @@
-import React from 'react';
-import ReactDom from 'react-dom';
+import React,{Component} from 'react';
+import Header from './header.js';
+import Footer from './footer.js';
 
-const App = () => {
-    return (
-        <div>
-            APP
-        </div>
-    );
+export default class App extends Component {
+    render(){
+        return(
+            <div id="app">
+                <Header/>
+                <Footer/>
+            </div>
+        );
+    }
 }
-
-ReactDom.render(<App/>,document.body);
