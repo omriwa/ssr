@@ -11,7 +11,10 @@
     box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);
 }
 // FONTS
-@
+@font-face {
+    font-family: times;
+    // src: url('./fonts/Lora-Regular.ttf')format('ttf');
+}
 .chart-panel {
     text-align: center;
     background-color: whitesmoke;
@@ -21,7 +24,9 @@
     padding-bottom: 5%;
     @include div-out-shadow;
 }
-
+.chart-panel * {
+    font-family: times;
+}
 .rates-header-section span {
     width: 50%;
     display: inline-block;

@@ -14,8 +14,7 @@ module.exports = {
         publicPath: '/'
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.scss$/,
                 use: [
                     "style-loader", // creates style nodes from JS strings
@@ -39,17 +38,24 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: "babel-loader"
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                loader: 'url-loader',
+                use: [
+                    'file-loader'
+                ]
             }
         ]
-        
+
     },
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ]
-  },
-  plugins: [
-      new HtmlWebPackPlugin({
-          title: 'Sabrez Website'
-      }),
-      new CleanWebpackPlugin(['dist'])
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js']
+    },
+    plugins: [
+        new HtmlWebPackPlugin({
+            title: 'Sabrez Website'
+        }),
+        new CleanWebpackPlugin(['dist'])
     ]
 }
