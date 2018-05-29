@@ -1,0 +1,41 @@
+.chart-panel {
+  text-align: center;
+  background-color: whitesmoke;
+  width: 75%;
+  margin: auto;
+  padding: 1% 0;
+  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75); }
+
+.rates-header-section span {
+  width: 50%;
+  display: inline-block; }
+
+.rates-section {
+  text-align: center; }
+
+.rates-section table {
+  margin: auto;
+  width: 50%;
+  background-color: blue;
+  margin-top: 10%;
+  margin-bottom: 15%; }
+
+.rates-header-section::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 65%;
+  background-color: gainsboro;
+  height: 0.2%;
+  right: 17%; }
+
+.button-section {
+  -webkit-box-shadow: inset 0px 0px 1px 2px #452c45;
+  -moz-box-shadow: inset 0px 0px 1px 2px #452c45;
+  box-shadow: inset 0px 0px 1px 2px #452c45;
+  padding: 2%;
+  margin: 3% auto; }
+
+/*# sourceMappingURL=panel.css.map */
