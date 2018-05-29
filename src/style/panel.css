@@ -1,41 +1,44 @@
-.chart-panel {
-  text-align: center;
-  background-color: whitesmoke;
-  width: 75%;
-  margin: auto;
-  padding: 1% 0;
-  -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75); }
+/*
+Error: Invalid CSS after "@": expected identifier, was ".chart-panel {"
+        on line 14 of /home/ubuntu/workspace/src/style/panel.scss
 
-.rates-header-section span {
-  width: 50%;
-  display: inline-block; }
+9:     -webkit-box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);
+10:     -moz-box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);
+11:     box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);
+12: }
+13: // FONTS
+14: @
+15: .chart-panel {
+16:     text-align: center;
+17:     background-color: whitesmoke;
+18:     width: 75%;
+19:     margin: auto;
 
-.rates-section {
-  text-align: center; }
-
-.rates-section table {
-  margin: auto;
-  width: 50%;
-  background-color: blue;
-  margin-top: 10%;
-  margin-bottom: 15%; }
-
-.rates-header-section::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 65%;
-  background-color: gainsboro;
-  height: 0.2%;
-  right: 17%; }
-
-.button-section {
-  -webkit-box-shadow: inset 0px 0px 1px 2px #452c45;
-  -moz-box-shadow: inset 0px 0px 1px 2px #452c45;
-  box-shadow: inset 0px 0px 1px 2px #452c45;
-  padding: 2%;
-  margin: 3% auto; }
-
-/*# sourceMappingURL=panel.css.map */
+Backtrace:
+/home/ubuntu/workspace/src/style/panel.scss:14
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:194:in `directive'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/plugin.rb:82:in `update_stylesheets'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:340:in `watch_or_update'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/sass_scss.rb:51:in `process_result'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:52:in `parse'
+/nix/store/zmisxnl63ica4zaviifixamr3xg27kzp-ruby-2.3.1-p0/lib/ruby/gems/2.3.0/gems/sass-3.4.23/lib/sass/exec/base.rb:19:in `parse!'
+/mnt/shared/sbin/scss:13:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"@\": expected identifier, was \".chart-panel {\"\A         on line 14 of /home/ubuntu/workspace/src/style/panel.scss\A \A 9:     -webkit-box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);\A 10:     -moz-box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);\A 11:     box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);\A 12: }\A 13: // FONTS\A 14: @\A 15: .chart-panel {\A 16:     text-align: center;\A 17:     background-color: whitesmoke;\A 18:     width: 75%;\A 19:     margin: auto;"; }

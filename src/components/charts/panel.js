@@ -4,7 +4,17 @@ export default class ChartPanel extends Component {
     render(){
         return(
             <div className="chart-panel">
-                <h3>headline</h3>
+                <h3>Sabrez Stock Calculator App</h3>
+                <p>
+                    Sabrez developing CRM, developed this application for brokers,private use,company use. 
+                    easy to use,and intuitive.
+                </p>
+                <h4>The Stock Calculator App</h4>
+                <ul>
+                    <li>ACTIONS:</li>
+                    <li>Getting realtime data of the diffrent charts.</li>
+                    <li>Converting any kind of currency in realtime.</li>
+                </ul>
                 <div className="button-section">
                     <div className="btn-container">
                         <label>Date:</label>
@@ -33,10 +43,32 @@ export default class ChartPanel extends Component {
                         </thead>
                         <tbody>
                             <tr>
-                                <td></td>
+                                <td>assdsd</td>
+                                <td>assdsd</td>
+                            </tr>
+                            <tr>
+                                <td>assdsd</td>
+                                <td>assdsd</td>
+                            </tr>
+                            <tr>
+                                <td>assdsd</td>
+                                <td>assdsd</td>
+                            </tr>
+                            <tr>
+                                <td>assdsd</td>
+                                <td>assdsd</td>
+                            </tr>
+                            <tr>
+                                <td>assdsd</td>
+                                <td>assdsd</td>
+                            </tr>
+                            <tr>
+                                <td>assdsd</td>
+                                <td>assdsd</td>
                             </tr>
                         </tbody>
                     </table>
+                    <button className="reload-btn">Reload</button>
                 </div>
             </div>
         );

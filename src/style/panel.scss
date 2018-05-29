@@ -1,35 +1,46 @@
+// MIXIN
 @mixin div-out-shadow {
-    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75);
 }
+
 @mixin div-in-shadow {
-    -webkit-box-shadow: inset 0px 0px 1px 2px rgba(69,44,69,1);
-    -moz-box-shadow: inset 0px 0px 1px 2px rgba(69,44,69,1);
-    box-shadow: inset 0px 0px 1px 2px rgba(69,44,69,1);
+    -webkit-box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);
+    -moz-box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);
+    box-shadow: inset 0px 0px 1px 2px rgba(69, 44, 69, 1);
 }
+// FONTS
+@
 .chart-panel {
     text-align: center;
     background-color: whitesmoke;
     width: 75%;
     margin: auto;
     padding: 1% 0;
+    padding-bottom: 5%;
     @include div-out-shadow;
 }
+
 .rates-header-section span {
     width: 50%;
     display: inline-block;
 }
+
 .rates-section {
     text-align: center;
 }
+
 .rates-section table {
     margin: auto;
+    margin-top: auto;
     width: 50%;
-    background-color: blue;
-    margin-top: 10%;
-    margin-bottom: 15%;
+    background-color: whitesmoke;
+    margin-top: 5%;
+    border: 1px solid black;
+    padding: 2%;
 }
+
 .rates-header-section::after {
     content: "";
     display: block;
@@ -39,9 +50,52 @@
     height: 0.2%;
     right: 17%;
 }
+
 .button-section {
-    @include div-in-shadow;
     padding: 2%;
     margin: 3% auto;
+    -webkit-box-shadow: inset 0px 0px 1px 2px #452c45;
+    -moz-box-shadow: inset 0px 0px 1px 2px #452c45;
+    box-shadow: inset 0px 0px 1px 0px #452c45;
 }
 
+.btn-container {
+    text-align: left;
+    display: block;
+}
+
+// buttons
+.btn-container button {
+    width: 15%;
+    margin-left: 2%;
+    height: 35px;
+}
+
+.btn-container label:hover,
+.rates-header-section span:hover {
+    cursor: help;
+}
+
+.btn-container:last-of-type button {
+    margin-left: 6.65%;
+}
+
+//transitions
+.btn-container label,
+.rates-header-section span {
+    transition: 0.5s all;
+}
+
+ul li {
+    text-align: left;
+    list-style-type: square;
+}
+
+ul li:first-of-type {
+    list-style-type: none;
+}
+.reload-btn {
+    margin-top: 2%;
+    padding: 1%;
+    width: 25%;
+}
