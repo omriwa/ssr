@@ -1,14 +1,8 @@
 var router = require("express").Router();
 
 // api request for 
-var apiRequest = require('request');
-var apiRequestFunction = function(url) {//api function for readabilty
-    apiRequest(url, function(error, response, body) {
-        console.log('error:', error); // Print the error if one occurred
-        console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-        console.log('body:', body); // Print the HTML for the Google homepage.
-    });
-}
+var apiRequest = require('request-promise');
+
 
 
 router.use(function(req, res, next) {
@@ -16,21 +10,50 @@ router.use(function(req, res, next) {
     next();
 });
 // routes of api
-router.get('/1', function(req, res) {
-    apiRequestFunction('http://data.fixer.io/api/latest?access_key=79c91d1041686f6a21cf4dc9dfdf0b2a');
-    res.send(req.url);
+router.get('/latest', function(req, res) {
+    apiRequest('http://data.fixer.io/api/latest?access_key=79c91d1041686f6a21cf4dc9dfdf0b2a')
+        .then(function(htmlString) {
+            res.send(htmlString);
+        })
+        .catch(function(err) {
+            // Crawling failed...
+        });
 });
-router.get('/2', function(req, res) {
-    res.send(req.url);
+router.get('/historical', function(req, res) {
+    apiRequest('http://data.fixer.io/api/historical?access_key=79c91d1041686f6a21cf4dc9dfdf0b2a')
+        .then(function(htmlString) {
+            res.send(htmlString);
+        })
+        .catch(function(err) {
+            // Crawling failed...
+        });
 });
-router.get('/3', function(req, res) {
-    res.send(req.url);
+router.get('/convert', function(req, res) {
+    apiRequest('http://data.fixer.io/api/convert?access_key=79c91d1041686f6a21cf4dc9dfdf0b2a')
+        .then(function(htmlString) {
+            res.send(htmlString);
+        })
+        .catch(function(err) {
+            // Crawling failed...
+        });
 });
-router.get('/4', function(req, res) {
-    res.send(req.url);
+router.get('/timeseries', function(req, res) {
+    apiRequest('http://data.fixer.io/api/timeseries?access_key=79c91d1041686f6a21cf4dc9dfdf0b2a')
+        .then(function(htmlString) {
+            res.send(htmlString);
+        })
+        .catch(function(err) {
+            // Crawling failed...
+        });
 });
-router.get('/5', function(req, res) {
-    res.send(req.url);
+router.get('/fluctuation', function(req, res) {
+    apiRequest('http://data.fixer.io/api/fluctuation?access_key=79c91d1041686f6a21cf4dc9dfdf0b2a')
+        .then(function(htmlString) {
+            res.send(htmlString);
+        })
+        .catch(function(err) {
+            // Crawling failed...
+        });
 });
 
 module.exports = router;
