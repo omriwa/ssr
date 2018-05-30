@@ -1,5 +1,6 @@
 @font-face {
-  font-family: times; }
+  font-family: 'Lora';
+  src: url("./fonts/Lora-Regular.ttf") format("ttf"); }
 .chart-panel {
   text-align: center;
   background-color: whitesmoke;
@@ -12,7 +13,7 @@
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.75); }
 
 .chart-panel * {
-  font-family: times; }
+  font-family: "Lora"; }
 
 .rates-header-section span {
   width: 50%;
@@ -24,7 +25,7 @@
 .rates-section table {
   margin: auto;
   margin-top: auto;
-  width: 50%;
+  width: 90%;
   background-color: whitesmoke;
   margin-top: 5%;
   border: 1px solid black;
@@ -77,5 +78,16 @@ ul li:first-of-type {
   margin-top: 2%;
   padding: 1%;
   width: 25%; }
+
+.explantion {
+  background-color: #5353c6;
+  padding: 3%;
+  border-top: 1px solid;
+  border-bottom: 1px solid; }
+
+button {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75); }
 
 /*# sourceMappingURL=panel.css.map */

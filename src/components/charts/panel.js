@@ -10,7 +10,7 @@ export default class ChartPanel extends Component {
                     easy to use,and intuitive.
                 </p>
                 <h4>The Stock Calculator App</h4>
-                <ul>
+                <ul className="explantion">
                     <li>ACTIONS:</li>
                     <li>Getting realtime data of the diffrent charts.</li>
                     <li>Converting any kind of currency in realtime.</li>
@@ -18,14 +18,19 @@ export default class ChartPanel extends Component {
                 <div className="button-section">
                     <div className="btn-container">
                         <label>Date:</label>
-                        <button></button>
+                        <input type="date"></input>
                     </div>
                     <div className="btn-container">
                         <label>Base:</label>
-                        <button></button>
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
                     </div>
                     <div className="btn-container">
-                        <button>Search</button>
+                        <input type="text" placeholder="Search"></input>
+                        <button><span className="fa fa-search"></span></button>
                     </div>
                 </div>
                 
