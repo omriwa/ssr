@@ -85,9 +85,11 @@
     height: 35px;
 }
 
-.btn-container label:hover,
-.rates-header-section span:hover {
-    cursor: help;
+.btn-container label,
+.rates-header-section span {
+    &:hover{
+        cursor: help;
+    }
 }
 
 .btn-container:last-of-type button {

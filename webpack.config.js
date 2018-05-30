@@ -6,7 +6,8 @@ module.exports = {
     entry: {
         style: './src/style/style.scss',
         panel: './src/style/panel.scss',
-        react: './src/js/index.js'
+        footer: './src/style/footer.scss',
+        chartViewer: './src/js/index.js'
     },
     output: {
         filename: '[name].bundle.js',

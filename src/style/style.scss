@@ -4,16 +4,15 @@ HEADER
 BODY
 FOOTER
 */
+
 body {
     background-color: cornsilk;
+    margin: 0;
 }
 
 // FOOTER
 footer {
-    position: fixed;
-    z-index: -1;
-    bottom: 0;
-    left: 0;
+    margin-top: 10%;
     width: 100%;
     background-color: red;
     text-align: center;
