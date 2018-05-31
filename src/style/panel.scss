@@ -78,22 +78,11 @@
     display: block;
 }
 
-// buttons
-.btn-container button {
-    width: 15%;
-    margin-left: 2%;
-    height: 35px;
-}
-
 .btn-container label,
 .rates-header-section span {
     &:hover{
         cursor: help;
     }
-}
-
-.btn-container:last-of-type button {
-    margin-left: 6.65%;
 }
 
 //transitions

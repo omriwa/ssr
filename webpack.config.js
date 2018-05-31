@@ -7,6 +7,7 @@ module.exports = {
         style: './src/style/style.scss',
         panel: './src/style/panel.scss',
         footer: './src/style/footer.scss',
+        header: './src/style/header.scss',
         chartViewer: './src/js/index.js'
     },
     output: {

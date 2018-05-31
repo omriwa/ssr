@@ -6,4 +6,13 @@
 #copyright {
   padding: 2%; }
 
+footer {
+  margin-top: 10%;
+  width: 100%;
+  background-color: red;
+  text-align: center; }
+
+.explantion {
+  background-color: blue; }
+
 /*# sourceMappingURL=footer.css.map */
