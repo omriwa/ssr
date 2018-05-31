@@ -30,7 +30,7 @@ export default class ChartPanel extends Component {
                     </div>
                     <div className="btn-container">
                         <input type="text" placeholder="Search"></input>
-                        <button><span className="fa fa-search"></span></button>
+                        <button><i className="fa fa-search"></i></button>
                     </div>
                 </div>
                 
