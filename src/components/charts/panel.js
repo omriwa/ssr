@@ -25,11 +25,11 @@ export default class ChartPanel extends Component {
     
     renderRates(){
         if(this.state.rates)
-            return Object.keys(this.state.rates).map((currency,val) => {
+            return Object.keys(this.state.rates).map((currency,index) => {
                 return(
-                    <tr>
+                    <tr key={index}>
                         <td>{currency}</td>
-                        <td>{val}</td>
+                        <td>{this.state.rates[currency]}</td>
                     </tr>
                 );
             });
