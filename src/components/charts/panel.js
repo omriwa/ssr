@@ -1,6 +1,40 @@
 import React,{Component} from 'react';
 
 export default class ChartPanel extends Component {
+    constructor(props){
+        super(props);
+        this.state = {};
+        this.getData = this.getData.bind(this);
+    }
+    
+    getData(){
+        fetch('https://ssr-omriwallach.c9users.io/api/latest')
+            .then(res => res.json())
+                .then(
+                    (result) => {
+                        console.log(result);
+                        this.setState({
+                            timeStamp: result.timestamp,
+                            base: result.base,
+                            date: result.date,
+                            rates: result.rates
+                        });
+                    }    
+                );
+    }
+    
+    renderRates(){
+        if(this.state.rates)
+            return Object.keys(this.state.rates).map((currency,val) => {
+                return(
+                    <tr>
+                        <td>{currency}</td>
+                        <td>{val}</td>
+                    </tr>
+                );
+            });
+    }
+    
     render(){
         return(
             <div className="chart-panel">
@@ -15,12 +49,12 @@ export default class ChartPanel extends Component {
                     <li>Getting realtime data of the diffrent charts.</li>
                     <li>Converting any kind of currency in realtime.</li>
                 </ul>
-                <div className="button-section">
-                    <div className="btn-container">
+                <div className="button-section container row">
+                    <div className="col-md-4">
                         <label>Date:</label>
                         <input type="date"></input>
                     </div>
-                    <div className="btn-container">
+                    <div className="col-md-4">
                         <label>Base:</label>
                         <select>
                             <option>1</option>
@@ -28,7 +62,7 @@ export default class ChartPanel extends Component {
                             <option>3</option>
                         </select>
                     </div>
-                    <div className="btn-container">
+                    <div className="col-md-4">
                         <input type="text" placeholder="Search"></input>
                         <button><i className="fa fa-search"></i></button>
                     </div>
@@ -36,7 +70,7 @@ export default class ChartPanel extends Component {
                 
                 <div className="rates-header-section">
                     <span>Rates:</span>
-                    <span>TimeStamp:</span>
+                    <span>TimeStamp: {this.state.timeStamp}</span>
                 </div>
                 <div className="rates-section">
                     <table>
@@ -47,33 +81,10 @@ export default class ChartPanel extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>assdsd</td>
-                                <td>assdsd</td>
-                            </tr>
-                            <tr>
-                                <td>assdsd</td>
-                                <td>assdsd</td>
-                            </tr>
-                            <tr>
-                                <td>assdsd</td>
-                                <td>assdsd</td>
-                            </tr>
-                            <tr>
-                                <td>assdsd</td>
-                                <td>assdsd</td>
-                            </tr>
-                            <tr>
-                                <td>assdsd</td>
-                                <td>assdsd</td>
-                            </tr>
-                            <tr>
-                                <td>assdsd</td>
-                                <td>assdsd</td>
-                            </tr>
+                            {this.renderRates()}
                         </tbody>
                     </table>
-                    <button className="reload-btn">Reload</button>
+                    <button className="reload-btn" onClick={this.getData}>Reload</button>
                 </div>
             </div>
         );

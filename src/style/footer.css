@@ -4,7 +4,8 @@
   border-top: 5px solid gainsboro; }
 
 #copyright {
-  padding: 2%; }
+  padding: 2%;
+  background-color: dimgray; }
 
 footer {
   margin-top: 10%;

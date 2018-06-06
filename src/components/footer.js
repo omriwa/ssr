@@ -1,6 +1,10 @@
 import React,{Component} from 'react';
 
 export default class Footer extends Component {
+    constructor(props){
+        super(props);
+        this.state = {copyright: "This site was developed by Omri Wallach, 2018 ©"};
+    }
     render(){
         return(
             <footer>
@@ -9,7 +13,7 @@ export default class Footer extends Component {
                     LINKS
                 </div>
                 <div id="copyright">
-                    COPYRIGHT
+                    {this.state.copyright}
                 </div>
             </footer>
         );
