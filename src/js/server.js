@@ -6,6 +6,7 @@ const config = require('../../webpack.config.js');
 const compiler = webpack(config);
 const path = require("path");
 const apiRouter = require("./api.js");
+const accountRouter = require("./accountRoutes.js");
 const bodyParser = require("body-parser");
 
 
@@ -20,6 +21,7 @@ server.get('/',function(req,res){
     res.render('index.html');
 });
 server.use('/api',apiRouter);
+server.use('/account',accountRouter);
 // LISTEN
 server.listen(process.env.PORT,function(){
     console.log('server is up');
