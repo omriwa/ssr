@@ -1,0 +1,12 @@
+.account-form * {
+  display: block;
+  margin: auto; }
+
+.account-form {
+  margin: auto;
+  background-color: gainsboro;
+  width: 35%;
+  text-align: center;
+  padding: 5%; }
+
+/*# sourceMappingURL=account.css.map */

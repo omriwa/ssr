@@ -1,0 +1,21 @@
+$bgColor: gainsboro;
+@mixin account-form-input {
+    display: block;
+    margin: auto;
+}
+
+@mixin account-form-layout {
+    margin: auto;
+    background-color: $bgColor;
+    width: 35%;
+    text-align: center;
+    padding: 5%;
+}
+
+.account-form * {
+    @include account-form-input;
+}
+
+.account-form {
+    @include account-form-layout;
+}

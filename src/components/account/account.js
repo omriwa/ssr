@@ -1,12 +1,23 @@
 import React,{Component} from 'react';
 
-
 class RegisterPanel extends Component {
     render(){
         return(
-            <div id="register">
-                register
-            </div>
+            <form className={"account-form"} id="register">
+                <label>First name:</label>
+                <input type="text"/>
+                <label>Last name:</label>
+                <input type="text"/>
+                <label>Username:</label>
+                <input type="text"/>
+                <label>Password:</label>
+                <input type="password"/>
+                <label>Repeat passowrd:</label>
+                <input type="password"/>
+                <label>Email:</label>
+                <input type="email"/>
+                <button className={"btn btn-md btn-primary"}>Register</button>
+            </form>
         );
     }
 }
@@ -14,9 +25,13 @@ class RegisterPanel extends Component {
 class LoginPanel extends Component {
     render(){
         return(
-            <div id="login">
-                login
-            </div>
+            <form className={"account-form"} id="login">
+                <label>Username:</label>
+                <input type="text"/>
+                <label>Password:</label>
+                <input type="passowrd"/>
+                <button className={"btn btn-md btn-primary"}>Login</button>
+            </form>
         );
     }
 }

@@ -8,7 +8,8 @@ module.exports = {
         panel: './src/style/panel.scss',
         footer: './src/style/footer.scss',
         header: './src/style/header.scss',
-        chartViewer: './src/js/index.js'
+        chartViewer: './src/js/index.js',
+        account: './src/style/account.scss'
     },
     output: {
         filename: '[name].bundle.js',
