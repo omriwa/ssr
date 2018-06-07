@@ -21,6 +21,15 @@ class Description extends Component {
 }
 
 class ButtonPanel extends Component {
+    constructor(props){
+        super(props);
+        this.inputHandler = this.inputHandler.bind(this);
+    }
+    
+    inputHandler(e){
+        this.props.onInputChange(e.target.value);
+    }
+    
     render(){
         return(
             <div className="button-section container row">
@@ -37,8 +46,7 @@ class ButtonPanel extends Component {
                         </select>
                     </div>
                     <div className="col-md-4">
-                        <input id="search" type="text" placeholder="Search" onChange={this.searchCharts}></input>
-                        <button><i className="fa fa-search"></i></button>
+                        <input id="search" type="text" placeholder="Search" onChange={this.inputHandler}></input>
                     </div>
                 </div>    
         );
@@ -48,19 +56,8 @@ class ButtonPanel extends Component {
 export default class ChartPanel extends Component {
     constructor(props){
         super(props);
-        this.state = {};
+        this.state = {input: ""};
         this.getData = this.getData.bind(this);
-        this.searchCharts = this.searchCharts.bind(this);
-    }
-    
-    searchCharts(){
-        let input = document.getElementById('search').value,
-            tableEntries = document.getElementsByTagName('td');
-        
-        for(let entry in tableEntries){
-            if(entry.value.includes(input))
-                console.log(entry);
-        }
     }
     
     getData(){
@@ -68,7 +65,6 @@ export default class ChartPanel extends Component {
             .then(res => res.json())
                 .then(
                     (result) => {
-                        console.log(result);
                         this.setState({
                             timeStamp: result.timestamp,
                             base: result.base,
@@ -79,13 +75,23 @@ export default class ChartPanel extends Component {
                 );
     }
     
+    inputHandlerToSearch(input){
+        let cells = document.getElementsByClassName('cell');
+        for(let i=0;i < cells.length;i++){
+            if(input.length > 0 && cells[i].innerHTML.indexOf(input) != -1)
+                cells[i].style.backgroundColor = 'red';
+            else
+                cells[i].style.backgroundColor = 'transparent';
+        }
+    }
+    
     renderRates(){
         if(this.state.rates)
             return Object.keys(this.state.rates).map((currency,index) => {
                 return(
                     <tr key={index}>
-                        <td>{currency}</td>
-                        <td>{this.state.rates[currency]}</td>
+                        <td className={'cell'}>{currency}</td>
+                        <td className={'cell'}>{this.state.rates[currency]}</td>
                     </tr>
                 );
             });
@@ -95,7 +101,7 @@ export default class ChartPanel extends Component {
         return(
             <div className="chart-panel">
                 <Description/>
-                <ButtonPanel/>
+                <ButtonPanel onInputChange={this.inputHandlerToSearch}/>
                 
                 <div className="rates-header-section">
                     <span>Rates:</span>
