@@ -77,11 +77,12 @@ export default class ChartPanel extends Component {
     
     inputHandlerToSearch(input){
         let cells = document.getElementsByClassName('cell');
-        for(let i=0;i < cells.length;i++){
-            if(input.length > 0 && cells[i].innerHTML.indexOf(input) != -1)
-                cells[i].style.backgroundColor = 'red';
-            else
-                cells[i].style.backgroundColor = 'transparent';
+        for(let i=0;i < cells.length;i+=2){
+            if(input.length != 0 && cells[i].innerHTML.indexOf(input) != -1)//search for string inside the cell txt
+                cells[i].parentElement.style.backgroundColor = 'red';
+                
+            else//no cell with substring found
+                cells[i].parentElement.style.backgroundColor = 'transparent';
         }
     }
     
