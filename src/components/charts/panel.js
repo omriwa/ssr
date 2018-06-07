@@ -65,6 +65,7 @@ export default class ChartPanel extends Component {
             .then(res => res.json())
                 .then(
                     (result) => {
+                        console.log(result);
                         this.setState({
                             timeStamp: result.timestamp,
                             base: result.base,
