@@ -19,3 +19,6 @@ $bgColor: gainsboro;
 .account-form {
     @include account-form-layout;
 }
+#account-panel {
+    text-align: center;
+}

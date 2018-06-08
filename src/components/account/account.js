@@ -68,6 +68,7 @@ export default class AccountPanel extends Component {
     constructor(props) {
         super(props);
         this.state = { login: true };
+        this.changeForm = this.changeForm.bind(this);
     }
 
     renderLoginOrRegister() {
@@ -76,12 +77,22 @@ export default class AccountPanel extends Component {
         else
             return <RegisterPanel/>;
     }
+    
+    changeForm(){
+        let btn = $('#account-connect-method-btn');
+        this.setState({login: !this.state.login});//change login state
+        console.log(this.state.login);
+        if(this.state.login)
+            btn.text('Login!')
+        else
+            btn.text('Register!');
+    }
 
     render() {
         return (
             <div id="account-panel">
                 {this.renderLoginOrRegister()}
-                <button onClick={() => {this.setState({login: false})}}>Register</button>
+                <button id="account-connect-method-btn" onClick={this.changeForm}>Register!</button>
             </div>
         );
     }
