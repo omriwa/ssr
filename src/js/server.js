@@ -8,13 +8,19 @@ const path = require("path");
 const apiRouter = require("./api.js");
 const accountRouter = require("./accountRoutes.js");
 const bodyParser = require("body-parser");
-const MongoClient = require('mongodb').MongoClient;
+const mongoose = require('mongoose');
+
 
 
 // CONFIGURATION
 server.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath
 }));
+
+server.use( bodyParser.json() );       // to support JSON-encoded bodies
+server.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 server.use(express.static(path.join(__dirname, 'dist')));
 // ROUTES
@@ -24,9 +30,9 @@ server.get('/', function(req, res) {
 server.use('/api', apiRouter);
 server.use('/account', accountRouter);
 // DB
-MongoClient.connect(process.env.IP, function(err, client) {
+mongoose.connect('mongodb://' + process.env.IP, function(err) {
     if(err)
-        console.log('DB is disconnected');
+        console.log(err);
     else
         console.log('DB is connected');
 
