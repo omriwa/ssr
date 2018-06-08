@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 
 
 class RegisterPanel extends Component {
@@ -7,8 +8,12 @@ class RegisterPanel extends Component {
         this.postData = this.postData.bind(this);
     }
 
-    postData() {
-        alert('postData')
+    postData(e) {
+        e.preventDefault();
+        $.post("https://ssr-omriwallach.c9users.io/account/register", { name: "John", time: "2pm" })
+            .done(function(data) {
+                alert("Data Loaded: " + data);
+            });
     }
 
     render() {
@@ -26,7 +31,7 @@ class RegisterPanel extends Component {
                 <input type="password"/>
                 <label>Email:</label>
                 <input type="email"/>
-                <button className={"btn btn-md btn-primary"}>Register</button>
+                <button className={"btn btn-md btn-primary"} onClick={this.postData}>Register</button>
             </form>
         );
     }
@@ -39,11 +44,11 @@ class LoginPanel extends Component {
     }
 
     postData(e) {
-        fetch('https://ssr-omriwallach.c9users.io/account/login', {
-            method: 'POST',
-            headers: {'Content-Type':'application/json'},
-            body: {}
-        });
+        e.preventDefault();
+        $.post("https://ssr-omriwallach.c9users.io/account/login", { name: "John", time: "2pm" })
+            .done(function(data) {
+                alert("Data Loaded: " + data);
+            });
     }
 
     render() {
