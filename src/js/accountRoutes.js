@@ -9,8 +9,6 @@ router.post('/login', function(req, res) {
     var userData = req.body,
         userRes;
 
-    console.log(req.body);
-
     User.find({ $and: [{ password: userData.pass }, { username: userData.uName }] }).exec(function(e, user) {
         console.log(user);
         if (user.length != 0)
