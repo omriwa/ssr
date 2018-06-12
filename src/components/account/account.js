@@ -11,7 +11,7 @@ class RegisterPanel extends Component {
     postData(e) {
         e.preventDefault();
         let userData = {};
-        $('input').each(function(){
+        $('input').each(function() {
             userData[$(this).attr('name')] = $(this).val();
         });
         console.log(userData);
@@ -48,7 +48,12 @@ class LoginPanel extends Component {
 
     postData(e) {
         e.preventDefault();
-        $.post("https://ssr-omriwallach.c9users.io/account/login", { name: "John", time: "2pm" })
+        let userData = {};
+        $('input').each(function() {
+            userData[$(this).attr('name')] = $(this).val();
+        });
+        console.log(userData);
+        $.post("https://ssr-omriwallach.c9users.io/account/login", userData)
             .done(function(data) {
                 alert("Data Loaded: " + data);
             });
@@ -58,9 +63,9 @@ class LoginPanel extends Component {
         return (
             <form className={"account-form"} id="login">
                 <label>Username:</label>
-                <input type="text"/>
+                <input type="text" name="uName"/>
                 <label>Password:</label>
-                <input type="passowrd"/>
+                <input type="passowrd" name="pass"/>
                 <button className={"btn btn-md btn-primary"} onClick={this.postData}>Login</button>
             </form>
         );
@@ -80,11 +85,11 @@ export default class AccountPanel extends Component {
         else
             return <RegisterPanel/>;
     }
-    
-    changeForm(){
+
+    changeForm() {
         let btn = $('#account-connect-method-btn');
-        this.setState({login: !this.state.login});//change login state
-        if(this.state.login)
+        this.setState({ login: !this.state.login }); //change login state
+        if (this.state.login)
             btn.text('Login!')
         else
             btn.text('Register!');
